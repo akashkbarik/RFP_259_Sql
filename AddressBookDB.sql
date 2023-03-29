@@ -154,3 +154,19 @@ mysql> SELECT COUNT(state)
 |            3 |
 +--------------+
 1 row in set (0.01 sec)
+mysql> insert into contactService(first_name,last_Name,address,city,state,zip,contact,email) values
+    -> ( 'Bikash','Barik','Angul','Angul','Maharastra',234567,0987654321,'Roxy@gmail.com' );
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from contactService
+    -> where city='Angul'
+    -> order by first_Name;
++------------+-----------+---------+-------+------------+--------+------------+----------------------+
+| first_Name | last_Name | address | city  | state      | zip    | contact    | email                |
++------------+-----------+---------+-------+------------+--------+------------+----------------------+
+| Bikash     | Barik     | Angul   | Angul | Maharastra | 234567 |  987654321 | Roxy@gmail.com       |
+| jkash      | Barik     | Angul   | Angul | Odisha     | 123456 | 1234567890 | akashak403@gmail.com |
++------------+-----------+---------+-------+------------+--------+------------+----------------------+
+2 rows in set (0.00 sec)
+
+mysql>
