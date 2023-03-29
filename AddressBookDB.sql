@@ -97,3 +97,20 @@ mysql> select * from contactService
 | jkash      | Barik     | Angul   | Angul  | Odisha     | 123456 | 1234567890 | akashak403@gmail.com |
 +------------+-----------+---------+--------+------------+--------+------------+----------------------+
 4 rows in set (0.01 sec)
+mysql> update contactService
+    -> SET city='bhubanehswar'
+    -> WHERE first_Name='Akash';
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from contactService
+    -> ;
++------------+-----------+---------+--------------+------------+--------+------------+----------------------+
+| first_Name | last_Name | address | city         | state      | zip    | contact    | email                |
++------------+-----------+---------+--------------+------------+--------+------------+----------------------+
+| Akash      | Barik     | Angul   | bhubanehswar | Odisha     | 123456 | 1234567890 | akashak403@gmail.com |
+| Roxy       | Sen       | Mumbai  | Mumbai       | Maharastra | 234567 |  987654321 | Roxy@gmail.com       |
+| Toxy       | Sen       | Mumbai  | Mumbai       | Maharastra | 234567 |  987654321 | Roxy@gmail.com       |
+| jkash      | Barik     | Angul   | Angul        | Odisha     | 123456 | 1234567890 | akashak403@gmail.com |
++------------+-----------+---------+--------------+------------+--------+------------+----------------------+
+4 rows in set (0.01 sec)
