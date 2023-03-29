@@ -169,4 +169,30 @@ mysql> select * from contactService
 +------------+-----------+---------+-------+------------+--------+------------+----------------------+
 2 rows in set (0.00 sec)
 
-mysql>
+mysql> update contactService
+    -> set type ='family'
+    -> where first_Name='Akash';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update contactService
+    -> set type ='family'
+    -> where city='Angul';
+Query OK, 2 rows affected (0.01 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update contactService
+    -> set type ='friend'
+    -> where city!='Angul';
+Query OK, 2 rows affected (0.01 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select * from contactService;
++------------+-----------+---------+--------------+------------+--------+------------+----------------------+--------+
+| first_Name | last_Name | address | city         | state      | zip    | contact    | email                | type   |
++------------+-----------+---------+--------------+------------+--------+------------+----------------------+--------+
+| Akash      | Barik     | Angul   | bhubanehswar | Odisha     | 123456 | 1234567890 | akashak403@gmail.com | friend |
+| Roxy       | Sen       | Mumbai  | Mumbai       | Maharastra | 234567 |  987654321 | Roxy@gmail.com       | friend |
+| jkash      | Barik     | Angul   | Angul        | Odisha     | 123456 | 1234567890 | akashak403@gmail.com | family |
+| Bikash     | Barik     | Angul   | Angul        | Maharastra | 234567 |  987654321 | Roxy@gmail.com       | family |
++------------+-----------+---------+--------------+------------+--------+------------+----------------------+--------+
