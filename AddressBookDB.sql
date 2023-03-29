@@ -196,3 +196,13 @@ mysql> select * from contactService;
 | jkash      | Barik     | Angul   | Angul        | Odisha     | 123456 | 1234567890 | akashak403@gmail.com | family |
 | Bikash     | Barik     | Angul   | Angul        | Maharastra | 234567 |  987654321 | Roxy@gmail.com       | family |
 +------------+-----------+---------+--------------+------------+--------+------------+----------------------+--------+
+mysql> select type , count(*)
+    -> from contactService
+    -> group by type;
++--------+----------+
+| type   | count(*) |
++--------+----------+
+| friend |        2 |
+| family |        2 |
++--------+----------+
+2 rows in set (0.01 sec)
