@@ -137,3 +137,20 @@ mysql> select * from contactService
 | Roxy       | Sen       | Mumbai  | Mumbai       | Maharastra | 234567 |  987654321 | Roxy@gmail.com       |
 +------------+-----------+---------+--------------+------------+--------+------------+----------------------+
 3 rows in set (0.02 sec)
+mysql> SELECT COUNT(city)
+    -> FROM contactService;
++-------------+
+| COUNT(city) |
++-------------+
+|           3 |
++-------------+
+1 row in set (0.04 sec)
+
+mysql> SELECT COUNT(state)
+    -> FROM contactService;
++--------------+
+| COUNT(state) |
++--------------+
+|            3 |
++--------------+
+1 row in set (0.01 sec)
