@@ -206,3 +206,41 @@ mysql> select type , count(*)
 | family |        2 |
 +--------+----------+
 2 rows in set (0.01 sec)
+
+mysql> select * from contactservice;
++------------+-----------+---------+--------+------------+--------+------------+----------------------+--------+
+| first_Name | last_Name | address | city   | state      | zip    | contact    | email                | type   |
++------------+-----------+---------+--------+------------+--------+------------+----------------------+--------+
+| Roxy       | Sen       | Mumbai  | Mumbai | Maharastra | 234567 |  987654321 | Roxy@gmail.com       | friend |
+| jkash      | Barik     | Angul   | Angul  | Odisha     | 123456 | 1234567890 | akashak403@gmail.com | family |
+| Bikash     | Barik     | Angul   | Angul  | Maharastra | 234567 |  987654321 | Roxy@gmail.com       | family |
+| Akash      | Barik     | kochi   | thiru  | kerla      | 123456 | 1234567890 | bdj@abc.com          | friend |
++------------+-----------+---------+--------+------------+--------+------------+----------------------+--------+
+4 rows in set (0.02 sec)
+
+mysql> insert into family (select * from contactservice where type ='family');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from family;
++------------+-----------+---------+-------+------------+--------+------------+----------------------+--------+
+| first_Name | last_Name | address | city  | state      | zip    | contact    | email                | type   |
++------------+-----------+---------+-------+------------+--------+------------+----------------------+--------+
+| jkash      | Barik     | Angul   | Angul | Odisha     | 123456 | 1234567890 | akashak403@gmail.com | family |
+| Bikash     | Barik     | Angul   | Angul | Maharastra | 234567 |  987654321 | Roxy@gmail.com       | family |
++------------+-----------+---------+-------+------------+--------+------------+----------------------+--------+
+2 rows in set (0.00 sec)
+
+
+mysql> insert into friend (select * from contactservice where type ='friend');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from friend;
++------------+-----------+---------+--------+------------+--------+------------+----------------+--------+
+| first_Name | last_Name | address | city   | state      | zip    | contact    | email          | type   |
++------------+-----------+---------+--------+------------+--------+------------+----------------+--------+
+| Roxy       | Sen       | Mumbai  | Mumbai | Maharastra | 234567 |  987654321 | Roxy@gmail.com | friend |
+| Akash      | Barik     | kochi   | thiru  | kerla      | 123456 | 1234567890 | bdj@abc.com    | friend |
++------------+-----------+---------+--------+------------+--------+------------+----------------+--------+
+2 rows in set (0.00 sec)
